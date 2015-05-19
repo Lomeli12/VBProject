@@ -198,7 +198,6 @@
     <None Include="My Project\DataSources\Major.datasource" />
     <None Include="My Project\DataSources\Rank.datasource" />
     <None Include="My Project\DataSources\Student.datasource" />
-    <None Include="My Project\DataSources\StudentForm.datasource" />
     <None Include="My Project\DataSources\Teacher.datasource" />
     <None Include="SchoolClasses.dbml.layout">
       <DependentUpon>SchoolClasses.dbml</DependentUpon>
@@ -223,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SchoolCreationScript.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

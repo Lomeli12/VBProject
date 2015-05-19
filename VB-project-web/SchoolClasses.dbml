@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="School" Class="SchoolClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=lt102\sqlexpress;Initial Catalog=School;Integrated Security=True" SettingsObjectName="LinqAndSQL_2.My.MySettings" SettingsPropertyName="SchoolConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Course" Member="Courses">
+    <Type Name="Course">
+      <Column Name="CourseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CoursePrereq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseUnits" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="Course_CourseSection" Member="CourseSections" ThisKey="CourseID" OtherKey="CourseID" Type="CourseSection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseLocation" Member="CourseLocations">
+    <Type Name="CourseLocation">
+      <Column Name="CourseLocationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Room" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ComputerLab" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SeatCapacity" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="CourseLocation_CourseSection" Member="CourseSections" ThisKey="CourseLocationID" OtherKey="CourseLocationID" Type="CourseSection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseSection" Member="CourseSections">
+    <Type Name="CourseSection">
+      <Column Name="CourseSectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseLocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseStartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CourseEndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TeacherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CourseSection_Enrollment" Member="Enrollments" ThisKey="CourseSectionID" OtherKey="CourseSectionID" Type="Enrollment" />
+      <Association Name="Course_CourseSection" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
+      <Association Name="CourseLocation_CourseSection" Member="CourseLocation" ThisKey="CourseLocationID" OtherKey="CourseLocationID" Type="CourseLocation" IsForeignKey="true" />
+      <Association Name="Teacher_CourseSection" Member="Teacher" ThisKey="TeacherID" OtherKey="TeacherID" Type="Teacher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Education" Member="Educations">
+    <Type Name="Education">
+      <Column Name="EducationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Education" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="Education_Student" Member="Students" ThisKey="EducationID" OtherKey="EducationID" Type="Student" />
+      <Association Name="Education_Teacher" Member="Teachers" ThisKey="EducationID" OtherKey="EducationID" Type="Teacher" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enrollment" Member="Enrollments">
+    <Type Name="Enrollment">
+      <Column Name="EnrollmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseSectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GradeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CourseSection_Enrollment" Member="CourseSection" ThisKey="CourseSectionID" OtherKey="CourseSectionID" Type="CourseSection" IsForeignKey="true" />
+      <Association Name="Grade_Enrollment" Member="Grade" ThisKey="GradeID" OtherKey="GradeID" Type="Grade" IsForeignKey="true" />
+      <Association Name="Student_Enrollment" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grade" Member="Grades">
+    <Type Name="Grade">
+      <Column Name="GradeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="GradePoint" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Association Name="Grade_Enrollment" Member="Enrollments" ThisKey="GradeID" OtherKey="GradeID" Type="Enrollment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Major" Member="Majors">
+    <Type Name="Major">
+      <Column Name="MajorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Major" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="Major_Student" Member="Students" ThisKey="MajorID" OtherKey="MajorID" Type="Student" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rank" Member="Ranks">
+    <Type Name="Rank">
+      <Column Name="RankID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rank" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="Rank_Teacher" Member="Teachers" ThisKey="RankID" OtherKey="RankID" Type="Teacher" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EducationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MajorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Enrollment" Member="Enrollments" ThisKey="StudentID" OtherKey="StudentID" Type="Enrollment" />
+      <Association Name="Education_Student" Member="Education" ThisKey="EducationID" OtherKey="EducationID" Type="Education" IsForeignKey="true" />
+      <Association Name="Major_Student" Member="Major" ThisKey="MajorID" OtherKey="MajorID" Type="Major" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teacher" Member="Teachers">
+    <Type Name="Teacher">
+      <Column Name="TeacherID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EducationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RankID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Teacher_CourseSection" Member="CourseSections" ThisKey="TeacherID" OtherKey="TeacherID" Type="CourseSection" />
+      <Association Name="Education_Teacher" Member="Education" ThisKey="EducationID" OtherKey="EducationID" Type="Education" IsForeignKey="true" />
+      <Association Name="Rank_Teacher" Member="Rank" ThisKey="RankID" OtherKey="RankID" Type="Rank" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
