@@ -66,4 +66,13 @@ Partial Public Class ViewTableGeneric
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Teachers As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''addBtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents addBtn As Global.System.Web.UI.WebControls.Button
 End Class

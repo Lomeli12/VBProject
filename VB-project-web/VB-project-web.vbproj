@@ -87,6 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="EditEntry.aspx" />
+    <Content Include="EditTableGeneric.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ViewTableGeneric.aspx" />
     <Content Include="Web.config" />
@@ -97,6 +99,20 @@
     </Compile>
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EditEntry.aspx.designer.vb">
+      <DependentUpon>EditEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditEntry.aspx.vb">
+      <DependentUpon>EditEntry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EditTableGeneric.aspx.designer.vb">
+      <DependentUpon>EditTableGeneric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTableGeneric.aspx.vb">
+      <DependentUpon>EditTableGeneric.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
