@@ -1,4 +1,6 @@
-﻿Public Class EducationList
+﻿' Made by Kevin Wetsch
+
+Public Class EducationList
 
     Public educationID As Integer = 0
     Private db As New SchoolClassesDataContext

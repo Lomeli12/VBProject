@@ -13,12 +13,10 @@
             <h1>Editable Tables</h1>
             <h3>Courses</h3>
             <asp:Button id="viewCourse" Text="View Table" OnClick="ViewTable_Click" runat="server" />
-            <asp:Button id="editCourse" Text="Add/Edit Courses" OnClick="ViewTable_Click" runat="server" />
-            <asp:Button id="deleteCourse" Text="Delete Entries" OnClick="ViewTable_Click" runat="server" />
+            <asp:Button id="editCourse" Text="Edit Courses" OnClick="ViewTable_Click" runat="server" />
             <h3>Major</h3>
             <asp:Button id="viewMajor" Text="View Table" OnClick="ViewTable_Click" runat="server" />
-            <asp:Button id="editMajor" Text="Add/Edit Majors" OnClick="ViewTable_Click" runat="server" />
-            <asp:Button id="deleteMajor" Text="Delete Entries" OnClick="ViewTable_Click" runat="server" />
+            <asp:Button id="editMajor" Text="Edit Majors" OnClick="ViewTable_Click" runat="server" />
         </div>
         <div style="float:right; width:80%;">
             <h1>Viewable Tables</h1>

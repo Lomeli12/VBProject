@@ -32,6 +32,24 @@ Partial Public Class ViewTableGeneric
     Protected WithEvents tableView As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''editMajor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents editMajor As Global.System.Web.UI.WebControls.DetailsView
+
+    '''<summary>
+    '''editCourse control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents editCourse As Global.System.Web.UI.WebControls.DetailsView
+
+    '''<summary>
     '''Majors control.
     '''</summary>
     '''<remarks>
@@ -66,13 +84,4 @@ Partial Public Class ViewTableGeneric
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Teachers As Global.System.Web.UI.WebControls.SqlDataSource
-
-    '''<summary>
-    '''addBtn control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents addBtn As Global.System.Web.UI.WebControls.Button
 End Class

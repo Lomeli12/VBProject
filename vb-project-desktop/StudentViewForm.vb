@@ -1,4 +1,6 @@
-﻿Public Class StudentViewForm
+﻿' Made by Kevin Wetsch
+
+Public Class StudentViewForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()

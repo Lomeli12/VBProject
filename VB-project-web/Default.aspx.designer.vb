@@ -41,15 +41,6 @@ Partial Public Class _Default
     Protected WithEvents editCourse As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''deleteCourse control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents deleteCourse As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''viewMajor control.
     '''</summary>
     '''<remarks>
@@ -66,15 +57,6 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents editMajor As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''deleteMajor control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents deleteMajor As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''viewTeacher control.

@@ -1,4 +1,6 @@
-﻿Public Class StudentForm
+﻿' Made by Kevin Wetsch
+
+Public Class StudentForm
 
     Private db As New SchoolClassesDataContext
     Public state As String = "add"

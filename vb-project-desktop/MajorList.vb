@@ -1,4 +1,6 @@
-﻿Public Class MajorList
+﻿' Made by Kevin Wetsch
+
+Public Class MajorList
 
     Public majorID As Integer = 0
     Private db As New SchoolClassesDataContext

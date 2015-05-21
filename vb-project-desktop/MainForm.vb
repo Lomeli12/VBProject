@@ -1,4 +1,6 @@
-﻿Public Class MainForm
+﻿' Made by Kevin Wetsch
+
+Public Class MainForm
     Private db As New SchoolClassesDataContext
 
 
@@ -70,5 +72,5 @@
 
     End Sub
 
-  
+
 End Class

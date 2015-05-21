@@ -1,4 +1,6 @@
-﻿Public Class RankList
+﻿' Made by Kevin Wetsch
+
+Public Class RankList
 
 
     Public RankID As Integer = 0
